@@ -35,19 +35,19 @@ public class MainApp {
 //      userService.add(new User("User3", "Lastname3", "user3@mail.ru",car3));
 //      userService.add(new User("User4", "Lastname4", "user4@mail.ru", car4));
 
-      userService.add(user1);
-      userService.add(user2);
-      userService.add(user3);
-      userService.add(user4);
+      userService.addUser(user1);
+      userService.addUser(user2);
+      userService.addUser(user3);
+      userService.addUser(user4);
 
 
 
-      List<User> users = userService.listUsers();
+      List<User> users = userService.getUsersList();
       for (User user : users) {
          System.out.println("\n" + user + "\n");
       }
 
-      System.out.println("\n" + carService.getUser("Model3",3) + "\n");
+      System.out.println("\n" + carService.getUserByCarModelAndSeries("Model3",3) + "\n");
 
 
       context.close();

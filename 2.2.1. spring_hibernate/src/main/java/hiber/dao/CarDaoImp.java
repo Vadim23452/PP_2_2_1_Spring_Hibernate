@@ -15,13 +15,13 @@ public class CarDaoImp implements CarDao {
   private SessionFactory sessionFactory;
 
   @Override
-  public void add(Car car) {
+  public void addCar(Car car) {
     sessionFactory.getCurrentSession().save(car);
   }
 
   @Override
   @SuppressWarnings("unchecked")
-  public User getUser(String model, int series) {
+  public User getUserByCarModelAndSeries(String model, int series) {
     TypedQuery<User> query = sessionFactory.getCurrentSession()
         .createQuery("from User where car.model = :model and car.series = :series");
     query.setParameter("model", model).setParameter("series", series);
